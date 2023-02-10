@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/Cryptos.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var text = "HelloWorld";
+            var key = "Mykey";
+
+            var unicode = new Unicode();
+            console.log(String.format("Unicode - {0} : {1} <---> {2}", text, unicode.encode(text), unicode.decode(unicode.encode(text))));
+
+            var base64 = new Base64();
+            console.log(String.format("Base64 - {0} : {1} <---> {2}", text, base64.encode(text), base64.decode(base64.encode(text))));
+            
+            var xor = new XOREncrypt();
+            console.log(String.format("XOR - {0} [{1}] : {2} <---> {3}", text, key, xor.encrypt(text, key), xor.decrypt(xor.encrypt(text, key), key)));
+
+            var md5 = new MD5();
+            console.log(String.format("MD5 - {0} : {1}", text, md5.encrypt(text)));
+
+            var sha1 = new SHA1();
+            console.log(String.format("SHA1 - {0} : {1}", text, sha1.encrypt(text)));
+
+            var sha256 = new SHA256();
+            console.log(String.format("SHA256 - {0} : {1}", text, sha256.encrypt(text)));
+
+            var sha512 = new SHA512();
+            console.log(String.format("SHA512 - {0} : {1}", text, sha512.encrypt(text)));
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

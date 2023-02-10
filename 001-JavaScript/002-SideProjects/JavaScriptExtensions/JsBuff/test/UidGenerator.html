@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/UidGenerator.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Guid-{0}: {1}", i, UidGenerator.newGuid()));
+            }
+            
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Uuid-{0}: {1}", i, UidGenerator.newUuid()));
+            }
+
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Uid-{0} (Default): {1}", i, UidGenerator.newUid()));
+            }
+
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Uid-{0} (Len 11): {1}", i, UidGenerator.newUid(11)));
+            }
+
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Uid-{0} (Len 22): {1}", i, UidGenerator.newUid(22)));
+            }
+
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Uid-{0} (Decimal): {1}", i, UidGenerator.newDecUid()));
+            }
+
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Uid-{0} (Hex): {1}", i, UidGenerator.newHexUid()));
+            }
+
+            for (var i = 0; i < 3 ; i++) {
+                console.log(String.format("Uid-{0} (Letters): {1}", i, UidGenerator.newLetterUid()));
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/Collection.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("ABC".equalsIgnoreCase("abc"));
+
+            console.log(String.sprintf("'%3d' '%-3d' '%03d' '%2.2f' '%2.6f' '%2.2e'", 55, 55, 55, 3.1415, 3.14, 3.1415));
+            console.log(String.sprintf("%% '%c' '%s' '%5s' '%s'", "AA", "AA", "AA"));
+            console.log(String.sprintf("'%x' '%#2x' '%#2d' '%#16d'", 127, 127, "1111", "FF"));
+            console.log(String.sprintf("'%#8x' '%#8d' '%#8d'", 127, "1111", "77"));
+
+            console.log(String.format("String Format -> '{Hello {0}{1}}'", "World", "!"));
+            console.log(String.format("String Format -> '{0} {1}'", 1, 25.22));
+            console.log(String.format("String Empty -> '{0}'", String.empty()));
+            console.log(String.format("String isEmpty -> '{0} {1}'", String.empty().isEmpty(), "String".isEmpty()));
+            console.log(String.format("Array isEmpty -> '{0} {1}'", [].isEmpty(), [1, 2].isEmpty()));
+
+            var trimText = "<<Trim Text>>";
+            var trimText2 = "  Trim Text  ";
+            var trimText3 = "...Trim Text..";
+            console.log(String.format("String Trim Start : '{0}' -> '{1}'", trimText, trimText.trimStart("<")));
+            console.log(String.format("String Trim End : '{0}' -> '{1}'", trimText, trimText.trimEnd(">")));
+            console.log(String.format("String Trim : '{0}' -> '{1}'", trimText2, trimText2.trim()));
+            console.log(String.format("String Trim : '{0}' -> '{1}'", trimText3, trimText3.trim(".")));
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

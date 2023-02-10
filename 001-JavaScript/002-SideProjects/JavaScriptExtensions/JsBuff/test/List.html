@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/Collection.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var list = new List();
+            console.log(String.format("Empty Array -> [{0}]", list));
+            list.add("A");
+            console.log(String.format("Add an Item -> [{0}]", list));
+            list.addRange(["B", "C"]);
+            console.log(String.format("Add two Item -> [{0}]", list));
+            list.insert(1, "D");
+            console.log(String.format("Insert an Item -> [{0}]", list));
+            list.insert(-1, "E");
+            console.log(String.format("Insert an Item -> [{0}]", list));
+            list.insertRange(2, ["E", "F"]);
+            console.log(String.format("Insert two Item -> [{0}]", list));
+            list.insertRange(-2, ["X", "Y"]);
+            console.log(String.format("Insert two Item -> [{0}]", list));
+            list.replace(1, "B");
+            console.log(String.format("Replace an Item -> [{0}]", list));
+            list.replaceRange(3, ["B", "D"]);
+            console.log(String.format("Replace an Item -> [{0}]", list));
+            list.replaceRange(5, ["G", "H"]);
+            console.log(String.format("Replace two Item -> [{0}]", list));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.indexesOf("B")));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.indexesOf("B", 0)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.indexesOf("B", 2)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.indexesOf("B", -3)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.indexesOf("B", -5)));
+
+            console.log(String.format("Replace two Item -> [{0}]", list));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.lastIndexesOf("B")));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.lastIndexesOf("B", 0)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.lastIndexesOf("B", 2)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.lastIndexesOf("B", -3)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", list, list.lastIndexesOf("B", -5)));
+
+
+            list.reverseSort();
+            console.log(String.format("Sort (DESC) -> [{0}]", list));
+
+            list.remove(1);
+            console.log(String.format("Remove an Item -> [{0}]", list));
+
+            list.remove(1, 2);
+            console.log(String.format("Remove two Item -> [{0}]", list));
+
+            list.clear();
+            console.log(String.format("Clear Array -> [{0}]", list));
+
+            var listA = List.fromArray([1, 2, 3, 4, 5]);
+            var listB = List.fromArray([1, 2, 3, 4, 5]);
+            console.log(String.format("{0} == {1} -> [{2}]", listA, listB, listA.equals(listB)));
+
+            var listA = List.fromArray([1, 2, 3, 4, 5]);
+            var listB = List.fromArray([1, 2, 3, 5, 5]);
+            console.log(String.format("{0} == {1} -> [{2}]", listA, listB, listA.equals(listB)));
+
+            var listJ = List.fromArray([1, 2, 3, 4, 5]);
+            var listJ2 = List.fromArray([{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]);
+            console.log(String.format("To Json -> {0}", listJ.toJson()));
+            console.log(String.format("From Json -> {0}", List.fromJson(listJ.toJson())));
+            console.log(String.format("To String -> {0}", listJ2.toString()));
+            console.log(String.format("To Json -> {0}", listJ2.toJson()));
+
+
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

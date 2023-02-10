@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/DateTime.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var date = new Date();
+            var date2 = new Date().parseDateString("1911-10-10");
+            var date3 = new Date().parseDateTimeString("2015-02-28");
+            var date4 = new Date().parseDateTimeString("2016-02-28");
+            var date5 = new Date().parseDateTimeString("2017-02-28");
+
+            console.log(String.format("Today -> {0}", date.toFormatString("YYYY-MM-DD HH:mm:ss.fff")));
+            console.log(String.format("Today -> {0}", date.toFormatString("Y-M-D H:m:s.f")));
+            console.log(String.format("Today -> {0}", date.toFormatString("YYYY-MM-DD hh:mm:ss.fff")));
+            console.log(String.format("Today -> {0}", date.toFormatString("Y-M-D h:m:s.f")));
+
+            Date.setCultureInfo(DateCultureInfo.zh_TW());
+
+            console.log(String.format("Today (ROC) -> {0}", date.toROCFormatString("民國yyy年MM月DD日 DDDD hh時mm分ss秒")));
+            console.log(String.format("Today (ROC) -> {0}", date.toROCFormatString("民國y年M月D日 DDDD h時m分s秒")));
+            console.log(String.format("Today (ROC) -> {0}", date.toROCFormatString("西元YYYY年MM月DD日 DDDD hh時mm分ss秒")));
+            console.log(String.format("Today (ROC) -> {0}", date.toROCFormatString("西元Y年M月D日 DDDD h時m分s秒")));
+            console.log(String.format("Today (ROC) -> {0}", date2.toROCFormatString("民國yyy年MM月DD日 DDDD hh時mm分ss秒")));
+            console.log(String.format("Today (ROC) -> {0}", date2.toROCFormatString("民國y年M月D日 DDDD h時m分s秒")));
+
+            var today = date.toFormatString();
+            var datePeriod = DatePeriod.getInstance();
+
+            console.log(String.format("Year Range -> {0} ~ {1} ~ {2}", datePeriod.getYearPeriod(date).start.toFormatString(), today, datePeriod.getYearPeriod(date).end.toFormatString()));
+            console.log(String.format("Month Range -> {0} ~ {1} ~ {2}", datePeriod.getMonthPeriod(date).start.toFormatString(), today, datePeriod.getMonthPeriod(date).end.toFormatString()));
+            console.log(String.format("Month Range (2015/02) -> {0} ~ {1} ~ {2}", datePeriod.getMonthPeriod(date3).start.toFormatString(), date3.toFormatString(), datePeriod.getMonthPeriod(date3).end.toFormatString()));
+            console.log(String.format("Month Range (2016/02) -> {0} ~ {1} ~ {2}", datePeriod.getMonthPeriod(date4).start.toFormatString(), date4.toFormatString(), datePeriod.getMonthPeriod(date4).end.toFormatString()));
+            console.log(String.format("Month Range (2017/02) -> {0} ~ {1} ~ {2}", datePeriod.getMonthPeriod(date5).start.toFormatString(), date5.toFormatString(), datePeriod.getMonthPeriod(date5).end.toFormatString()));
+            console.log(String.format("Week Range -> {0} ~ {1} ~ {2}", datePeriod.getWeekPeriod(date).start.toFormatString("Y-M-D (DDD) H:m:s.f"), date.toFormatString("Y-M-D (DDD) H:m:s.f"), datePeriod.getWeekPeriod(date).end.toFormatString("Y-M-D (DDD) H:m:s.f")));
+            console.log(String.format("Week Range (Mon Start) -> {0} ~ {1} ~ {2}", datePeriod.getWeekPeriod(date, true).start.toFormatString("Y-M-D (DDD) H:m:s.f"), date.toFormatString("Y-M-D (DDD) H:m:s.f"), datePeriod.getWeekPeriod(date, true).end.toFormatString("Y-M-D (DDD) H:m:s.f")));
+            console.log(String.format("Day Range -> {0} ~ {1} ~ {2}", datePeriod.getDayPeriod(date).start.toFormatString(), today, datePeriod.getDayPeriod(date).end.toFormatString()));
+            console.log(String.format("Hours Range -> {0} ~ {1} ~ {2}", datePeriod.getHourPeriod(date).start.toFormatString(), today, datePeriod.getHourPeriod(date).end.toFormatString()));
+            console.log(String.format("Minutes Range -> {0} ~ {1} ~ {2}", datePeriod.getMinutePeriod(date).start.toFormatString(), today, datePeriod.getMinutePeriod(date).end.toFormatString()));
+            console.log(String.format("Seconds Range -> {0} ~ {1} ~ {2}", datePeriod.getSecondPeriod(date).start.toFormatString(), today, datePeriod.getSecondPeriod(date).end.toFormatString()));
+
+
+            var date6 = new Date().addDay(6);
+            var date7 = new Date().addHours(6);
+            var date8 = new Date().addYear(1);
+            var dateDuration = DateDuration.getInstance();
+            
+            console.log(String.format("Date Duration -> From {0} To {1} ; Total {2} Days", today, date6.toFormatString(), dateDuration.durationDays(date, date6)));
+            console.log(String.format("Date Duration -> From {0} To {1} ; Total {2} Hours", today, date7.toFormatString(), dateDuration.durationHours(date, date7)));
+            console.log(String.format("Date Duration -> From {0} To {1} ; Total {2} Years", today, date8.toFormatString(), dateDuration.durationYears(date, date8)));
+
+            var time = new Date().parseTimeString("18:00");
+            var date9 = new Date().parseDateString("2016/09/21");
+            console.log(String.format("Parse TimeString -> {0}", time.toFormatString("HH:mm:ss")));
+            console.log(String.format("Parse DataString -> {0}", date9.toFormatString("YYYY-MM-DD")));
+
+            console.log(String.format("Next/Last Day -> {0} ~ {1}", Date.today().lastSunday().toFormatString(), Date.today().nextSunday().toFormatString()));
+            console.log(String.format("Next/Last Day -> {0} ~ {1}", Date.today().lastMonday().toFormatString(), Date.today().nextMonday().toFormatString()));
+            console.log(String.format("Next/Last Day -> {0} ~ {1}", Date.today().lastTuesday().toFormatString(), Date.today().nextTuesday().toFormatString()));
+            console.log(String.format("Next/Last Day -> {0} ~ {1}", Date.today().lastWednesday().toFormatString(), Date.today().nextWednesday().toFormatString()));
+            console.log(String.format("Next/Last Day -> {0} ~ {1}", Date.today().lastThursday().toFormatString(), Date.today().nextThursday().toFormatString()));
+            console.log(String.format("Next/Last Day -> {0} ~ {1}", Date.today().lastFriday().toFormatString(), Date.today().nextFriday().toFormatString()));
+            console.log(String.format("Next/Last Day -> {0} ~ {1}", Date.today().lastSaturday().toFormatString(), Date.today().nextSaturday().toFormatString()));
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

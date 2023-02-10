@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/Collection.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var dictionary = new Dictionary();
+            console.log(String.format("New Dictionary : {0}", dictionary.toJson()));
+            dictionary.add("first", "First Data");
+            console.log(String.format("Add a Data : {0}", dictionary.toJson()));
+
+            dictionary.add("second", "Second Data");
+            console.log(String.format("Add a Data : {0}", dictionary.toJson()));
+
+            dictionary.add("first", "Update First Data");
+            console.log(String.format("Add a Data : {0}", dictionary.toJson()));
+
+            dictionary.add("a", "AA");
+            console.log(String.format("Add a Data : {0}", dictionary.toJson()));
+
+            dictionary.sort();
+            console.log(String.format("Sort Data : {0}", dictionary.toJson()));
+
+            dictionary.sort(true);
+            console.log(String.format("Desc Sort Data : {0}", dictionary.toJson()));
+
+            console.log(String.format("Get Data : {0}", dictionary.get("a")));
+
+            console.log(dictionary.keys());
+            console.log(dictionary.values());
+
+            console.log(String.format("Constants Key : {0} {1}", dictionary.isContainsKey("a"), dictionary.isContainsKey("b")));
+            console.log(String.format("Constants Value : {0} {1}", dictionary.isContainsValue("Second Data"), dictionary.isContainsValue("First Data")));
+
+            dictionary.remove("a");
+            console.log(String.format("Remove a Data : {0}", dictionary.toJson()));
+
+            dictionary.remove("a");
+            console.log(String.format("Remove a Data : {0}", dictionary.toJson()));
+
+            dictionary.removeAll();
+            console.log(String.format("Remove All Data : {0}", dictionary.toJson()));
+
+            dictionary.removeAll();
+            console.log(String.format("Remove All Data : {0}", dictionary.toJson()));
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

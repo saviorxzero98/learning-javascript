@@ -1,0 +1,69 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="CallParentMethod.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var role = new Warrior("Arola");
+            Display(role.getAbility());
+
+            $("#LevelUp").click(function () {
+                var oldAbility = role.getAbility();
+                role.levelUp();
+                var newAbility = role.getAbility();
+
+                DisplayLevel(oldAbility, newAbility);
+            });
+
+            $("#LevelUp2").click(function () {
+                var oldAbility = role.getAbility();
+                role.levelUp(2);
+                var newAbility = role.getAbility();
+
+                DisplayLevel(oldAbility, newAbility);
+            });
+
+            function Display(ability) {
+                $("#Name").text(ability.Name);
+                $("#Level").text(ability.Level);
+                $("#HP").text(ability.HP);
+                $("#ATK").text(ability.ATK);
+            }
+
+            function DisplayLevel(oldAbility, newAbility) {
+                var levelMsg = "";
+                levelMsg += "Level : " + oldAbility.Level + "→" + newAbility.Level + "\n";
+                levelMsg += "HP    : " + oldAbility.HP + "→" + newAbility.HP + "\n";
+                levelMsg += "ATK   : " + oldAbility.ATK + "→" + newAbility.ATK + "\n";
+                alert(levelMsg);
+
+                Display(newAbility);
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th width="80">Name</th>
+            <td width="150" align="right"><label id="Name" /></td>
+        </tr>
+        <tr>
+            <th width="80">Level</th>
+            <td width="150" align="right"><label id="Level" /></td>
+        </tr>
+        <tr>
+            <th width="80">HP</th>
+            <td width="150" align="right"><label id="HP" /></td>
+        </tr>
+        <tr>
+            <th width="80">ATK</th>
+            <td width="150" align="right"><label id="ATK" /></td>
+        </tr>
+    </table><br />
+    <input type="button" id="LevelUp" value="Level Up" />
+    <input type="button" id="LevelUp2" value="Level Up 2" />
+</body>
+</html>

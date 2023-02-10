@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="StaticProperty.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var role1 = new Role("Arola");
+        var role2 = new Role("Aporo");
+
+        DisplayRole1(role1.getAbility());
+        DisplayRole2(role2.getAbility());
+        
+        $("#ChangeWeaponType").click(function () {
+            Role.WeaponType = $("#WeaponType").val();
+
+            DisplayRole1(role1.getAbility());
+            DisplayRole2(role2.getAbility());
+        });
+
+        function DisplayRole1(ability) {
+            $("#Name1").text(ability.Name);
+            $("#Weapon1").text(Role.WeaponType);
+        }
+        function DisplayRole2(ability) {
+            $("#Name2").text(ability.HP);
+            $("#Weapon2").text(Role.WeaponType);
+        }
+    });
+    
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th width="150">Role 1</th>
+            <td width="150" align="right"><label id="Name1" /></td>
+        </tr>
+        <tr>
+            <th width="150">Role 1 Weapon</th>
+            <td width="150" align="right"><label id="Weapon1" /></td>
+        </tr>
+        <tr>
+            <th width="150">Role 2</th>
+            <td width="150" align="right"><label id="Name2" /></td>
+        </tr>
+        <tr>
+            <th width="150">Role 2 Weapon</th>
+            <td width="150" align="right"><label id="Weapon2" /></td>
+        </tr>
+    </table><br />
+    <select id="WeaponType">
+        <option>Sword</option>
+        <option>Shield</option>
+        <option>Axe</option>
+        <option>Bow</option>
+    </select>
+    <input type="button" id="ChangeWeaponType" value="Change Weapon Type" />
+</body>
+</html>

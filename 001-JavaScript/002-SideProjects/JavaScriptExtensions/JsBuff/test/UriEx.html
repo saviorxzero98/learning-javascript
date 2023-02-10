@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/http/HttpToolkit.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var uri = new Uri("https://example.com.tw:8080/GetRelationDat?type=A");
+            uri.setParam("CodeId", "中文字");
+            uri.setParams({
+                text: "ABC",
+                token: "123456"
+            });
+
+            console.log(uri.toString());
+            var params = Uri.parserQueryParams(uri.toString());
+            console.log(params);
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

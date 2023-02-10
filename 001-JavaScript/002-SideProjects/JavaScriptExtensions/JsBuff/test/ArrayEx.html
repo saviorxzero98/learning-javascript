@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/Collection.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var array = Array.empty();
+            console.log(String.format("Empty Array -> [{0}]", array));
+            array.add("A");
+            console.log(String.format("Add an Item -> [{0}]", array));
+            array.addRange(["B", "C"]);
+            console.log(String.format("Add two Item -> [{0}]", array));
+            array.insert(1, "D");
+            console.log(String.format("Insert an Item -> [{0}]", array));
+            array.insert(-1, "E");
+            console.log(String.format("Insert an Item -> [{0}]", array));
+            array.insertRange(2, ["E", "F"]);
+            console.log(String.format("Insert two Item -> [{0}]", array));
+            array.insertRange(-2, ["X", "Y"]);
+            console.log(String.format("Insert two Item -> [{0}]", array));
+            array.replace(1, "B");
+            console.log(String.format("Replace an Item -> [{0}]", array));
+            array.replaceRange(3, ["B", "D"]);
+            console.log(String.format("Replace an Item -> [{0}]", array));
+            array.replaceRange(5, ["G", "H"]);
+            console.log(String.format("Replace two Item -> [{0}]", array));
+
+            console.log(String.format("First Item -> [{0}]", array.first()));
+            console.log(String.format("Last Item -> [{0}]", array.last()));
+
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.indexesOf("B")));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.indexesOf("B", 0)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.indexesOf("B", 2)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.indexesOf("B", -3)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.indexesOf("B", -5)));
+
+            console.log(String.format("Replace two Item -> [{0}]", array));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.lastIndexesOf("B")));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.lastIndexesOf("B", 0)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.lastIndexesOf("B", 2)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.lastIndexesOf("B", -3)));
+            console.log(String.format("Index of B -> [{0}] -> [{1}]", array, array.lastIndexesOf("B", -5)));
+
+
+            array.reverseSort();
+            console.log(String.format("Sort (DESC) -> [{0}]", array));
+
+            array.remove(1);
+            console.log(String.format("Remove an Item -> [{0}]", array));
+
+            array.remove(1, 2);
+            console.log(String.format("Remove two Item -> [{0}]", array));
+
+            array.clear();
+            console.log(String.format("Clear Array -> [{0}]", array));
+
+            var arrayA = [1, 2, 3, 4, 5];
+            var arrayB = [1, 2, 3, 4, 5];
+            console.log(String.format("{0} == {1} -> [{2}]", arrayA, arrayB, arrayA.equals(arrayB)));
+
+            var arrayA = [1, 2, 3, 4, 5];
+            var arrayB = [1, 2, 3, 5, 5];
+            console.log(String.format("{0} == {1} -> [{2}]", arrayA, arrayB, arrayA.equals(arrayB)));
+
+            var arrayJ1 = [1, 2, 3, 4, 5];
+            var arrayJ2 = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }];
+
+            console.log(String.format("First Item -> {0}", arrayJ1.first(function (item) { return item > 3; })));
+            console.log("First Item", arrayJ2.first(function (item) { return item.id > 3; }));
+            console.log(String.format("Last Item -> {0}", arrayJ1.last(function (item) { return item < 3; })));
+            console.log("Last Item", arrayJ2.last(function (item) { return item.id < 3; }));
+
+            console.log(String.format("To Json -> {0}", arrayJ1.toJson()));
+            console.log(String.format("From Json -> {0}", Array.fromJson(arrayJ1.toJson())));
+            console.log(String.format("To String -> {0}", arrayJ2.toString()));
+            console.log(String.format("To Json -> {0}", arrayJ2.toJson()));
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

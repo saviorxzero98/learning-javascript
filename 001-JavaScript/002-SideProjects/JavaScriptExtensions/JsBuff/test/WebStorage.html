@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/storage/WebStorage.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Local Storage Manager
+            LocalStorageManager.set("Test", "LocalStorage");
+            console.log(LocalStorageManager.get("Test"));
+            LocalStorageManager.clear();
+
+            // Session Storage Manager
+            SessionStorageManager.set("Test", "SessionStorage");
+            console.log(SessionStorageManager.get("Test"));
+            SessionStorageManager.clear();
+
+            // Cookie Manager
+            CookieManager.set("TestA", "Cookie A");
+            CookieManager.set("TestB", "Cookie B", 5 * 60 * 60);
+            console.log(CookieManager.get("TestA"));
+            console.log(CookieManager.get("TestB"));
+            CookieManager.clear();
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

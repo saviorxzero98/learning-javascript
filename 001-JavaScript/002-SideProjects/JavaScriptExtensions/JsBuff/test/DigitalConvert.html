@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../src/core/String.js" type="text/javascript"></script>
+    <script src="../src/core/DigitalConvert.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            for (var i = 0; i < 100; i++) {
+                var letter = DigitalConvert.numberToLetters(i);
+                console.log(String.format("{0} - {1} - {2}", i, letter, DigitalConvert.lettersToNumber(letter)));
+            }
+
+            for (var i = 1; i < 100; i++) {
+                var letter = DigitalConvert.numberToRomanNumber(i);
+                console.log(String.format("{0} - {1} - {2}", i, letter, DigitalConvert.romanNumberToNumber(letter)));
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
