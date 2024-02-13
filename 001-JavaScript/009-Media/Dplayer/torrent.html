@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>DPlayer</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/webtorrent/1.9.7/webtorrent.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.27.1/DPlayer.min.js"></script>
+    </head>
+    <body>
+        <div id="video"></div>
+        <script>
+            const url = 'https://sample-videos.com/video321/flv/720/big_buck_bunny_720p_30mb.flv';
+            const dp = new DPlayer({
+                container: document.getElementById('video'),
+                screenshot: true,
+                video: {
+                    url: 'https://webtorrent.io/torrents/sintel.torrent',
+                    type: 'webtorrent',
+                },
+                pluginOptions: {
+                    webtorrent: {},
+                },
+            });
+        </script>
+    </body>
+</html>

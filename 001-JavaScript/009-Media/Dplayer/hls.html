@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>DPlayer</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.4/hls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.27.1/DPlayer.min.js"></script>
+    </head>
+    <body>
+        <div id="video"></div>
+        <script>
+            const url = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
+            const dp = new DPlayer({
+                container: document.getElementById('video'),
+                screenshot: true,
+                video: {
+                    url: url
+                }
+            });
+        </script>
+    </body>
+</html>

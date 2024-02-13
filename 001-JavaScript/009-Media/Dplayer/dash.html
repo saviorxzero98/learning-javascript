@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>DPlayer</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.3/dash.all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.27.1/DPlayer.min.js"></script>
+    </head>
+    <body>
+        <div id="video"></div>
+        <script>
+            const url = 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd';
+            const dp = new DPlayer({
+                container: document.getElementById('video'),
+                screenshot: true,
+                video: {
+                    url: url
+                }
+            });
+        </script>
+    </body>
+</html>

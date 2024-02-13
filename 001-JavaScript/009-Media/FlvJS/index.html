@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>FLV JS</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.6.2/flv.min.js"></script>
+    </head>
+    <body>
+        <video id="video" width="100%" height="100%" controls 
+               src="https://sample-videos.com/video321/flv/720/big_buck_bunny_720p_30mb.flv">
+        </video>
+        <script>
+            if (flvjs.isSupported()) {
+                const url = 'https://sample-videos.com/video321/flv/720/big_buck_bunny_720p_30mb.flv'
+                const video = document.getElementById('video');
+                const flvPlayer = flvjs.createPlayer({
+                    type: 'flv',
+                    url: url
+                });
+                flvPlayer.attachMediaElement(video);
+                flvPlayer.load();
+            }
+        </script>
+    </body>
+</html>

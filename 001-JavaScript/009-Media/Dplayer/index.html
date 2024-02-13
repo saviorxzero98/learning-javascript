@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>DPlayer</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dplayer/1.27.1/DPlayer.min.js"></script>
+    </head>
+    <body>
+        <div id="video"></div>
+        <script>
+            const url = 'http://clappr.io/highline.mp4';
+            const dp = new DPlayer({
+                container: document.getElementById('video'),
+                screenshot: true,
+                video: {
+                    url: url
+                }
+            });
+        </script>
+    </body>
+</html>
