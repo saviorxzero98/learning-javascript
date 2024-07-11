@@ -1,0 +1,7 @@
+.inline_box{
+    display: inline;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: orange;
+} 
