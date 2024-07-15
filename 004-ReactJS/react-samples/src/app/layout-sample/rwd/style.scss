@@ -18,11 +18,11 @@
         background-color:yellow;
     }
 
-    @include desktop{
+    @include desktop {
         background-color:lime;
     }
 
-    @include fhd{
+    @include desktop-fhd {
         background-color:blue;
     }
 }

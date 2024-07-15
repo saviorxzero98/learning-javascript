@@ -22,7 +22,7 @@
     }
 }
 
-@mixin fhd {
+@mixin desktop-fhd {
     @media(min-width: 1800px) {
         @content;
     }
