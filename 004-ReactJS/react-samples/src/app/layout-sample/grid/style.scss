@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "../../media";
+
+
+.box{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.grid-template-container {
+    display: grid;
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 2fr 8fr;
+    border: 1px solid black;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid-auto-row-container {
+    display: grid;
+    grid-auto-rows: 100px 300px;
+    grid-template-columns: 2fr 8fr;
+    grid-auto-flow: row;
+    border: 1px solid black;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid-auto-column-container {
+    display: grid;
+    grid-template-rows: 100px 300px;
+    grid-auto-columns: 2fr 8fr;
+    grid-auto-flow: column;
+    border: 1px solid black;
+}
+
+.grid-template-areas-container {
+    display: grid;
+    grid-template-rows: 100px 200px;
+    grid-template-columns: 150px repeat(2, 1fr);
+    grid-template-areas: 
+    "header header header"
+    "menu . content2"
+    "menu content1 content2";
+    border: 1px solid black;
+}
+
+.header  {
+    grid-area: header;
+}
+
+.menu  {
+    grid-area: menu;
+}
+
+.content1 {
+    grid-area: content1;
+}
+
+.content2  {
+    grid-area: content2;
+}
