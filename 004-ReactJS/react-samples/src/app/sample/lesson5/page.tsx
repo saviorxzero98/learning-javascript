@@ -1,6 +1,6 @@
 'use client'
 import { useRef, useState } from 'react';
-import './style.css';
+import './style.scss';
 
 
 // 使用

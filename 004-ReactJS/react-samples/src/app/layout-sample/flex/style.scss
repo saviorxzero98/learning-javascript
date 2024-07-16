@@ -1,11 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
+.container {
+    display: flex;
+    flex-direction: column;
+}
 .box{
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
     background-color: orange;
+}
+.box-h-32 {
+    height: 8rem;
+}
+.box-h-16 {
+    height: 4rem;
+}
+.box-h-8 {
+    height: 2rem;
+}
+
+
+.flex-sample-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.flex-sample-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-sample-3 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.flex-sample-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.flex-sample-5 {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
 }

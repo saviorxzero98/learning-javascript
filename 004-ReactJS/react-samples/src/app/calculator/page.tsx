@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import './style.css';
+import './style.scss';
 
 type InputKeyValue = {
     title: string,

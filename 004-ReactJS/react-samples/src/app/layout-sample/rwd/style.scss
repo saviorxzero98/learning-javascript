@@ -6,23 +6,23 @@
     margin: 10px;
     background-color: orange;
 
-    @include mobile {
+    @include media(mobile) {
         background-color:red;
     }
 
-    @include talbet-potrait {
+    @include media(tablet-potrait) {
         background-color:orange;
     }
 
-    @include tablet-lanscape {
+    @include media(tablet-lanscape) {
         background-color:yellow;
     }
 
-    @include desktop {
+    @include media(desktop) {
         background-color:lime;
     }
 
-    @include desktop-fhd {
+    @include media(desktop-fhd) {
         background-color:blue;
     }
 }

@@ -1,6 +1,6 @@
 'use client'
 import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
-import './style.css';
+import './style.scss';
 
 
 // Context

@@ -1,7 +1,11 @@
-.block_box{
-    display: block;
+.inline-box {
+    display: inline;
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
     background-color: orange;
-} 
+}
+
+.inline-box-w-32 {
+    width: 8rem;
+}

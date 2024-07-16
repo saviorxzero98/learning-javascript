@@ -1,25 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import "../../media";
 
-
+.container {
+    display: flex;
+    flex-direction: column;
+}
 .box{
     border: 1px solid black;
     padding: 10px;
 }
 
+// Grid Template
 .grid-template-container {
     display: grid;
     grid-template-rows: 100px 300px;
     grid-template-columns: 2fr 8fr;
     border: 1px solid black;
 
-    @include mobile {
+    @include media(mobile) {
         grid-template-columns: 1fr;
     }
 }
 
+// Grud Auto Row
 .grid-auto-row-container {
     display: grid;
     grid-auto-rows: 100px 300px;
@@ -27,11 +29,12 @@
     grid-auto-flow: row;
     border: 1px solid black;
 
-    @include mobile {
+    @include media(mobile) {
         grid-template-columns: 1fr;
     }
 }
 
+// Grid Auto Column
 .grid-auto-column-container {
     display: grid;
     grid-template-rows: 100px 300px;
@@ -40,29 +43,73 @@
     border: 1px solid black;
 }
 
+// Grid Template Areas
 .grid-template-areas-container {
     display: grid;
-    grid-template-rows: 100px 200px;
-    grid-template-columns: 150px repeat(2, 1fr);
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 200px repeat(2, 1fr);
     grid-template-areas: 
-    "header header header"
-    "menu . content2"
-    "menu content1 content2";
+        "menubutton header header"
+        "menu . body"
+        "menu footer footer";
     border: 1px solid black;
-}
 
-.header  {
+    @include media(mobile) {
+        grid-template-rows: 100px 250px 500px 100px;
+        grid-template-columns: 2fr 8fr;
+        grid-template-areas: 
+        "menubutton header"
+        "menu menu"
+        "body body"
+        "footer footer";
+    }
+}
+.grid-template-menu-button-area  {
+    grid-area: menubutton;
+}
+.grid-template-header-area  {
     grid-area: header;
 }
-
-.menu  {
+.grid-template-menu-area  {
     grid-area: menu;
 }
-
-.content1 {
-    grid-area: content1;
+.grid-template-body-area {
+    grid-area: body;
+    overflow-y: scroll;
+}
+.grid-template-footer-area  {
+    grid-area: footer;
 }
 
-.content2  {
-    grid-area: content2;
+// Grid Row & Column
+.grid-row-column-container {
+    display: grid;
+    grid-template-rows: 100px 200px 100px;
+    grid-template-columns: 2fr 3fr 3fr 2fr;
+    border: 1px solid black;
+}
+.grid-row-column-header {
+    grid-row: 1 / auto;
+    grid-column-start: 2;
+    grid-column-end: span 3;
+}
+.grid-row-column-menu-button {
+    grid-row: 1 / auto;
+    grid-column: 1 / 2;
+}
+.grid-row-column-menu {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.grid-row-column-body {
+    grid-row: 2 / 3;
+    grid-column-start: 3;
+    grid-column-end: span 2;
+}
+.grid-row-column-footer {
+    grid-row-start: 3 / auto;
+    grid-column-start: 2;
+    grid-column-end: span 3;
 }

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import './style.css';
+import './style.scss';
 
 const Lesson2 = () => {
     const [ count, setCount ] = useState(0);
