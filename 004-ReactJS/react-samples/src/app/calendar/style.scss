@@ -1,0 +1,38 @@
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    width: 356px;
+}
+.calendar-header-title {
+    display: flex;
+    gap: 4px;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    gap: 1px;
+}
+
+.calendar-item-day-of-week {
+    text-align: center;
+}
+
+.calendar-item-last-next {
+    height: 50px;
+    color: #3C3C3C66;
+    background-color: #EEEEEE66;
+    border: none;
+}
+
+.calendar-item-current {
+    height: 50px;
+    background-color: #EEEEEE66;
+    border: none;
+}
+
+.calendar-item-selected {
+    color: blue;
+    border: 1px solid blue;
+}
