@@ -1,0 +1,152 @@
+@import "../../media";
+
+
+.container {
+    display: grid;
+    border: 1px solid black;
+
+    grid-template-rows: 100px 300px 100px;
+    grid-template-columns: 100px repeat(3, 1fr);
+    grid-template-areas: 
+        "sidebar header header header"
+        "sidebar body-left body-center body-right"
+        "sidebar footer footer footer";
+    
+    @include media(mobile) {
+        grid-template-rows: 100px 200px repeat(3, 300px) 100px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "body-left"
+        "body-center"
+        "body-right"
+        "footer";
+    }
+
+    @include media(tablet-potrait) {
+        grid-template-rows: 100px repeat(3, 300px) 100px;
+        grid-template-columns: 100px 1fr;
+        grid-template-areas: 
+            "sidebar header"
+            "sidebar body-left"
+            "sidebar body-center"
+            "sidebar body-right"
+            "sidebar footer";
+    }
+
+    @include media(tablet-lanscape) {
+        grid-template-rows: 100px repeat(2, 300px) 100px;
+        grid-template-columns: 100px repeat(2, 1fr);
+        grid-template-areas: 
+            "sidebar header header"
+            "sidebar body-left body-center"
+            "sidebar body-right ."
+            "sidebar footer footer";
+    }
+}
+
+.header {
+    grid-area: header;
+    border: 1px solid black;
+    padding: 10px;
+}
+.sidebar {
+    grid-area: sidebar;
+    border: 1px solid black;
+    padding: 10px;
+    overflow-y: scroll;
+}
+.body-right {
+    grid-area: body-right;
+    border: 1px solid black;
+    padding: 10px;
+    overflow-y: scroll;
+
+    @include media(mobile) {
+        background-color:purple;
+        color: #FFFFFF;
+    }
+
+    @include media(tablet-potrait) {
+        background-color:navy;
+        color: #FFFFFF;
+    }
+
+    @include media(tablet-lanscape) {
+        background-color:blue;
+        color: #FFFFFF;
+    }
+
+    @include media(desktop) {
+        background-color:green;
+        color: #FFFFFF;
+    }
+
+    @include media(desktop-fhd) {
+        background-color:yellow;
+    }
+
+}
+.body-center {
+    grid-area: body-center;
+    border: 1px solid black;
+    padding: 10px;
+    overflow-y: scroll;
+
+    @include media(mobile) {
+        background-color:red;
+        color: #FFFFFF;
+    }
+
+    @include media(tablet-potrait) {
+        background-color:orange;
+    }
+
+    @include media(tablet-lanscape) {
+        background-color:yellow;
+    }
+
+    @include media(desktop) {
+        background-color:lime;
+    }
+
+    @include media(desktop-fhd) {
+        background-color:blue;
+        color: #FFFFFF;
+    }
+}
+.body-left {
+    grid-area: body-left;
+    border: 1px solid black;
+    padding: 10px;
+    overflow-y: scroll;
+
+    @include media(mobile) {
+        background-color:#000000;
+        color: #FFFFFF;
+    }
+
+    @include media(tablet-potrait) {
+        background-color:#333333;
+        color: #FFFFFF;
+    }
+
+    @include media(tablet-lanscape) {
+        background-color:#666666;
+        color: #FFFFFF;
+    }
+
+    @include media(desktop) {
+        background-color:#999999;
+    }
+
+    @include media(desktop-fhd) {
+        background-color:#CCCCCC;
+    }
+}
+.footer {
+    grid-area: footer;
+    border: 1px solid black;
+    padding: 10px;
+}
