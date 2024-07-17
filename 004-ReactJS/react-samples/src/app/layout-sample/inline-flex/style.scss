@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.box{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: orange;
+}
+.box-h-32 {
+    height: 8rem;
+}
+.box-h-16 {
+    height: 4rem;
+}
+.box-h-8 {
+    height: 2rem;
+}
+
+.inline-flex-sample {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-sample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
