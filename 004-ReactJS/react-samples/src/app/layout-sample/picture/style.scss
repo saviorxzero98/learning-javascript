@@ -1,0 +1,81 @@
+.body {
+    padding: 16px;
+}
+
+.photo-frame {
+    position: relative;
+    width: 300px;
+    padding-top: 300px;
+}
+.photo-sample-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    top: 0px;
+    left: 0px;
+}
+
+.image-sample-1 {
+    aspect-ratio: 1 / 1; 
+    height: 300px;
+    object-fit: cover;
+    object-position: right;
+    background-color: lightgreen;
+}
+
+
+.image-sample-2 {
+    aspect-ratio: 4 / 3; 
+    height: 300px;
+    object-fit: cover;
+    object-position: left;
+    background-color: lightgreen;
+}
+
+.image-sample-3 {
+    aspect-ratio: 9 / 16; 
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    background-color: lightgreen;
+}
+
+.image-sample-4 {
+    aspect-ratio: 4 / 3; 
+    height: 300px;
+    object-fit: cover;
+    object-position: 80% 0%;
+    background-color: lightgreen;
+}
+
+.image-sample-5 {
+    aspect-ratio: 1 / 1; 
+    height: 300px;
+    object-fit: contain;
+    background-color: lightgreen;
+}
+
+
+.image-sample-6 {
+    aspect-ratio: 4 / 3; 
+    height: 300px;
+    object-fit: none;
+    object-position: 86% 95%;
+    background-color: lightgreen;
+}
+
+.image-sample-7 {
+    aspect-ratio: 1 / 1; 
+    height: 300px;
+    object-fit: fill;
+    background-color: lightgreen;
+}
+
+.image-sample-8 {
+    aspect-ratio: 1 / 1; 
+    height: 300px;
+    object-fit: scale-down;
+    background-color: lightgreen;
+}

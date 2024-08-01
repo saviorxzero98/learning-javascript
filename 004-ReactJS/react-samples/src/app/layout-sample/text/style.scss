@@ -1,0 +1,42 @@
+.body {
+    padding: 16px;
+}
+
+.container {
+    width: 300px;
+    background-color: lightblue;
+}
+
+.word-break-normal {
+    word-break: normal;
+}
+
+.word-break-all {
+    word-break: break-all;
+}
+
+.word-break-word {
+    word-break: break-word;
+}
+
+.word-break-keep-all {
+    word-break: keep-all;
+}
+
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-clip {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.text-scroll {
+    height: 100px;
+    word-break: keep-all;
+    overflow: auto;
+}
